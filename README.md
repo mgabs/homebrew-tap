@@ -22,3 +22,12 @@ Amethyst includes built-in auto-updates via Sparkle. You can also update via Hom
 ```bash
 brew upgrade --cask amethyst
 ```
+
+## Troubleshooting Gatekeeper / Malware Warning
+
+If macOS blocks Amethyst with a malware warning or error `-128` (since the fork is signed but not notarized), remove the quarantine attribute:
+
+```bash
+xattr -dr com.apple.quarantine /Applications/Amethyst.app
+```
+
