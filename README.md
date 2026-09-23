@@ -1,33 +1,37 @@
-# Homebrew Tap for Amethyst (Fork)
+# Homebrew Tap (mgabs)
 
-Custom Homebrew tap for [Amethyst](https://github.com/mgabs/Amethyst) (mgabs fork).
+Custom Homebrew tap for macOS applications.
+
+## Casks
+
+- **Amethyst** (Fork): `brew install --cask mgabs/tap/amethyst`
+- **TabFlow**: `brew install --cask mgabs/tap/tab-flow`
 
 ## Installation
 
 ```bash
 brew tap mgabs/tap
-brew install --cask amethyst
+brew install --cask tab-flow
 ```
 
-Or as a single command:
+Or install directly:
 
 ```bash
-brew install --cask mgabs/tap/amethyst
+brew install --cask mgabs/tap/tab-flow
 ```
 
 ## Updates
 
-Amethyst includes built-in auto-updates via Sparkle. You can also update via Homebrew:
+Apps include built-in auto-updates via Sparkle. You can also update via Homebrew:
 
 ```bash
-brew upgrade --cask amethyst
+brew upgrade --cask tab-flow
 ```
 
-## Troubleshooting Gatekeeper / Malware Warning
+## Troubleshooting Gatekeeper / Quarantine
 
-If macOS blocks Amethyst with a malware warning or error `-128` (since the fork is signed but not notarized), remove the quarantine attribute:
+If macOS blocks launch with a malware warning or error `-128` (if self-signed), remove the quarantine attribute:
 
 ```bash
-xattr -dr com.apple.quarantine /Applications/Amethyst.app
+xattr -dr com.apple.quarantine /Applications/TabFlow.app
 ```
-
