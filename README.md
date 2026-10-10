@@ -12,6 +12,7 @@ Custom Homebrew tap for macOS applications and CLI developer tools.
 ## Casks (macOS Apps)
 
 - **Amethyst** (Fork): `brew install --cask mgabs/tap/amethyst`
+- **Look**: `brew install --cask mgabs/tap/look`
 - **TabFlow**: `brew install --cask mgabs/tap/tab-flow`
 
 ## Installation
@@ -24,6 +25,7 @@ brew tap mgabs/tap
 brew install lgtm
 
 # Install macOS GUI apps
+brew install --cask look
 brew install --cask tab-flow
 ```
 
@@ -32,6 +34,7 @@ brew install --cask tab-flow
 ```bash
 brew update
 brew upgrade lgtm
+brew upgrade --cask look
 brew upgrade --cask tab-flow
 ```
 
@@ -40,5 +43,6 @@ brew upgrade --cask tab-flow
 If macOS blocks launch with a malware warning or error `-128` (if self-signed), remove the quarantine attribute:
 
 ```bash
+xattr -dr com.apple.quarantine /Applications/Look.app
 xattr -dr com.apple.quarantine /Applications/TabFlow.app
 ```
