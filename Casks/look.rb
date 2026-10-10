@@ -1,9 +1,9 @@
 cask "look" do
   arch arm: "", intel: "-x86_64"
 
-  version "0.7.5"
-  sha256 arm:   "0a85dc3a8ca8742c7f28b9f12c9e2128fddb7bc64a7168afbf00f2310ec5df6a",
-         intel: "1d396ef7cdd8bf20cc41116e61538910f689439dcf6e9f826cc66a9319b1a891"
+  version "0.7.7"
+  sha256 arm:   "6723898ab536ea8e99adbcdaab40cd611de5a77ab832328623554846418a28b8",
+         intel: "be2030c3edf6d0786d2f651a2f5979f1959053faf35a647d4e1da75601d5089c"
 
   url "https://github.com/mgabs/look/releases/download/v#{version}/Look-#{version}-macOS#{arch}.zip"
   name "Look"
