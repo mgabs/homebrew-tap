@@ -1,15 +1,28 @@
 class Lgtm < Formula
   desc "Fast, real-time terminal diff reviewer & AI agent steering TUI built in Rust"
   homepage "https://github.com/mgabs/lgtm"
-  url "https://github.com/mgabs/lgtm/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "1e8b1ac77c5d80de453a9ed9058e17ef68183cb9284cf774d069a93fbb467010"
+  version "0.1.0"
   license "MIT"
-  head "https://github.com/mgabs/lgtm.git", branch: "main"
 
-  depends_on "rust" => :build
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/mgabs/lgtm/releases/download/v0.1.0/lgtm-v0.1.0-darwin-arm64.tar.gz"
+      sha256 "7dd77c991f34fe28cd3b28994d2feaf8ee05f3fed1ddf07bd822914cf749a639"
+    else
+      url "https://github.com/mgabs/lgtm/releases/download/v0.1.0/lgtm-v0.1.0-darwin-arm64.tar.gz"
+      sha256 "7dd77c991f34fe28cd3b28994d2feaf8ee05f3fed1ddf07bd822914cf749a639"
+    end
+  end
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/mgabs/lgtm/releases/download/v0.1.0/lgtm-v0.1.0-linux-x86_64.tar.gz"
+      sha256 "fb8da40a071176469300e8a65e2c436cbe37da79cad7c9a73488d4662be15db8"
+    end
+  end
 
   def install
-    system "cargo", "install", *std_cargo_args
+    bin.install "lgtm"
   end
 
   test do
