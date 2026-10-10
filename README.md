@@ -1,8 +1,15 @@
 # Homebrew Tap (mgabs)
 
-Custom Homebrew tap for macOS applications.
+Custom Homebrew tap for macOS applications and CLI developer tools.
 
-## Casks
+## Formulae (CLI Tools)
+
+- **LGTM**: Fast, real-time terminal diff reviewer & AI agent steering TUI built in Rust.
+  ```bash
+  brew install mgabs/tap/lgtm
+  ```
+
+## Casks (macOS Apps)
 
 - **Amethyst** (Fork): `brew install --cask mgabs/tap/amethyst`
 - **TabFlow**: `brew install --cask mgabs/tap/tab-flow`
@@ -10,25 +17,25 @@ Custom Homebrew tap for macOS applications.
 ## Installation
 
 ```bash
+# Add tap
 brew tap mgabs/tap
+
+# Install lgtm CLI
+brew install lgtm
+
+# Install macOS GUI apps
 brew install --cask tab-flow
-```
-
-Or install directly:
-
-```bash
-brew install --cask mgabs/tap/tab-flow
 ```
 
 ## Updates
 
-Apps include built-in auto-updates via Sparkle. You can also update via Homebrew:
-
 ```bash
+brew update
+brew upgrade lgtm
 brew upgrade --cask tab-flow
 ```
 
-## Troubleshooting Gatekeeper / Quarantine
+## Troubleshooting Gatekeeper / Quarantine (Casks)
 
 If macOS blocks launch with a malware warning or error `-128` (if self-signed), remove the quarantine attribute:
 
