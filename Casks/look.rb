@@ -16,7 +16,7 @@ cask "look" do
   end
 
   auto_updates true
-  depends_on macos: ">= :ventura"
+  depends_on macos: ":ventura"
 
   app "Look.app"
   binary "#{appdir}/Look.app/Contents/MacOS/Look", target: "lookapp"
