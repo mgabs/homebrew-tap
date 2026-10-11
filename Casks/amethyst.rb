@@ -1,6 +1,6 @@
 cask "amethyst" do
-  version "${SEMVER},${BUILD_NUM}"
-  sha256 "${SHA256}"
+  version "Amethyst-v0.27.1-b1572.dSYM.zip,Amethyst-v0.27.1-b1572.dSYM.zip"
+  sha256 "29e7a27f8f751a6d7fcf19d22fd86bb053928a8d725f12fc51f895a1920213f2"
 
   url "https://github.com/mgabs/Amethyst/releases/download/v#{version.csv.first}/Amethyst-v#{version.csv.first}-b#{version.csv.second}.zip"
   name "Amethyst"
