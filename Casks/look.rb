@@ -1,13 +1,17 @@
 cask "look" do
-  arch arm: "", intel: "-x86_64"
+  version "0.7.8"
 
-  version "0.7.7"
-  sha256 arm:   "6723898ab536ea8e99adbcdaab40cd611de5a77ab832328623554846418a28b8",
-         intel: "be2030c3edf6d0786d2f651a2f5979f1959053faf35a647d4e1da75601d5089c"
+  on_arm do
+    sha256 "fbba7c99409aa2bf747b181d9e5fdc4a9b69f4951ded3d1ae7e14d0f14b0e017"
+    url "https://github.com/mgabs/look/releases/download/v#{version}/Look-#{version}-macOS.zip"
+  end
+  on_intel do
+    sha256 "23baf5b37686a6de931e2314041676ca71f8ffb5e4991cf01d61b2b45394ccff"
+    url "https://github.com/mgabs/look/releases/download/v#{version}/Look-#{version}-macOS-x86_64.zip"
+  end
 
-  url "https://github.com/mgabs/look/releases/download/v#{version}/Look-#{version}-macOS#{arch}.zip"
   name "Look"
-  desc "Keyboard-first, local-first launcher"
+  desc "Keyboard-first local launcher"
   homepage "https://github.com/mgabs/look"
 
   livecheck do
@@ -15,22 +19,19 @@ cask "look" do
     strategy :github_latest
   end
 
-  auto_updates true
-  depends_on macos: :ventura
+  depends_on macos: :sequoia
 
   app "Look.app"
   binary "#{appdir}/Look.app/Contents/MacOS/Look", target: "lookapp"
 
+  uninstall quit: "noah-code.Look"
+
   zap trash: [
     "~/.look",
-    "~/Library/Application Support/noah-code.Look",
+    "~/Library/Application Support/Look",
     "~/Library/Caches/noah-code.Look",
+    "~/Library/HTTPStorages/noah-code.Look",
+    "~/Library/HTTPStorages/noah-code.Look.binarycookies",
     "~/Library/Preferences/noah-code.Look.plist",
-    "~/Library/Saved Application State/noah-code.Look.savedState",
   ]
-
-  caveats <<~EOS
-    If macOS blocks launch with a malware warning or error -128, run:
-      xattr -dr com.apple.quarantine /Applications/Look.app
-  EOS
 end
