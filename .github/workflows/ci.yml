@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  test:
+    name: Run Tap Tests
+    runs-on: macos-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+
+      - name: Run Tap Test Suite
+        run: ruby test/test_tap.rb
+
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Audit Formulae and Casks
+        run: |
+          for formula in Formula/*.rb; do
+            echo "Auditing $formula..."
+            brew audit --formula "$formula"
+          done
+          for cask in Casks/*.rb; do
+            echo "Auditing $cask..."
+            brew audit --cask "$cask"
+          done
+
+      - name: Check Style
+        run: brew style Formula/*.rb Casks/*.rb
