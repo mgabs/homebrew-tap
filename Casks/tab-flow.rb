@@ -1,6 +1,6 @@
 cask "tab-flow" do
-  version "1.0.0"
-  sha256 "5bd87230bbb6a4c937307a6efe043d82b7d130c10f4aee6b6c279972316349c6"
+  version "1.0.1"
+  sha256 "e9ee8ea8aa846340841114a7828b51a5c4aea1583cda7bab966261cb92c7a0cc"
 
   url "https://github.com/mgabs/tab-flow/releases/download/v#{version}/TabFlow-#{version}.zip"
   name "TabFlow"
@@ -8,7 +8,7 @@ cask "tab-flow" do
   homepage "https://tabflow.app/"
 
   livecheck do
-    url "https://raw.githubusercontent.com/mgabs/tab-flow/master/build/appcast.xml"
+    url "https://raw.githubusercontent.com/mgabs/tab-flow/master/appcast.xml"
     strategy :sparkle
   end
 
