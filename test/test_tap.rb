@@ -44,6 +44,16 @@ class TapTest < Minitest::Test
       content.scan(/url\s+"([^"]+)"/).flatten.each do |url|
         assert_match URL_REGEX, url, "Invalid URL in #{rel_path}: #{url}"
       end
+
+      # Ensure Linux evaluation won't fail with "formula requires at least a URL"
+      has_macos_dependency = content.match?(/^\s*depends_on\s+:macos/)
+      has_linux_block = content.match?(/^\s*on_linux\s+do/)
+      has_top_level_url = content.match?(/^\s*url\s+"/)
+
+      assert(
+        has_macos_dependency || has_linux_block || has_top_level_url,
+        "#{rel_path} must either declare 'depends_on :macos', provide an 'on_linux' block, or have a top-level URL to pass Homebrew evaluation on Linux"
+      )
     end
   end
 
