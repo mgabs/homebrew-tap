@@ -7,16 +7,18 @@ class Lgtm < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/mgabs/lgtm/releases/download/v0.3.0/lgtm-v0.3.0-darwin-arm64.tar.gz"
-      sha256 "49db4d9c2294d61e0f65428701362137440df8eaff34f304745717e5d7c0f7c8"
+      sha256 "3d601ddf7a41f0ef1af2153623a9537b2a11e067c46d5a04ae330908d23266e8"
     else
       url "https://github.com/mgabs/lgtm/releases/download/v0.3.0/lgtm-v0.3.0-darwin-arm64.tar.gz"
-      sha256 "49db4d9c2294d61e0f65428701362137440df8eaff34f304745717e5d7c0f7c8"
+      sha256 "3d601ddf7a41f0ef1af2153623a9537b2a11e067c46d5a04ae330908d23266e8"
     end
   end
 
   on_linux do
-    url "https://github.com/mgabs/lgtm/releases/download/v0.3.0/lgtm-v0.3.0-linux-x86_64.tar.gz"
-    sha256 "d009575122b9850abe870afd25fe3d930fcbc7bfa1a039deb810d9a3ecb324fd"
+    if Hardware::CPU.intel?
+      url "https://github.com/mgabs/lgtm/releases/download/v0.3.0/lgtm-v0.3.0-linux-x86_64.tar.gz"
+      sha256 "f9912fb588fe3f135162466d7b5c45e0371c95178da741326e1ea3cc13aa1e66"
+    end
   end
 
   def install
