@@ -15,10 +15,8 @@ class Lgtm < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/mgabs/lgtm/releases/download/v0.3.0/lgtm-v0.3.0-linux-x86_64.tar.gz"
-      sha256 "d009575122b9850abe870afd25fe3d930fcbc7bfa1a039deb810d9a3ecb324fd"
-    end
+    url "https://github.com/mgabs/lgtm/releases/download/v0.3.0/lgtm-v0.3.0-linux-x86_64.tar.gz"
+    sha256 "d009575122b9850abe870afd25fe3d930fcbc7bfa1a039deb810d9a3ecb324fd"
   end
 
   def install
