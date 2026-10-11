@@ -5,13 +5,20 @@ class Lgtm < Formula
   license "MIT"
 
   on_macos do
-    url "https://github.com/mgabs/lgtm/releases/download/v0.3.0/lgtm-v0.3.0-darwin-arm64.tar.gz"
-    sha256 "aa4a322bb37a8cc1cd23ca67fac18ce99212848634cbdedc9cec328a86610457"
+    if Hardware::CPU.arm?
+      url "https://github.com/mgabs/lgtm/releases/download/v0.3.0/lgtm-v0.3.0-darwin-arm64.tar.gz"
+      sha256 "49db4d9c2294d61e0f65428701362137440df8eaff34f304745717e5d7c0f7c8"
+    else
+      url "https://github.com/mgabs/lgtm/releases/download/v0.3.0/lgtm-v0.3.0-darwin-arm64.tar.gz"
+      sha256 "49db4d9c2294d61e0f65428701362137440df8eaff34f304745717e5d7c0f7c8"
+    end
   end
 
   on_linux do
-    url "https://github.com/mgabs/lgtm/releases/download/v0.3.0/lgtm-v0.3.0-linux-x86_64.tar.gz"
-    sha256 "8cec4af35e12bc2669d3e50e772e85746dee408adb1e1ddd97b2af0496df91df"
+    if Hardware::CPU.intel?
+      url "https://github.com/mgabs/lgtm/releases/download/v0.3.0/lgtm-v0.3.0-linux-x86_64.tar.gz"
+      sha256 "d009575122b9850abe870afd25fe3d930fcbc7bfa1a039deb810d9a3ecb324fd"
+    end
   end
 
   def install
