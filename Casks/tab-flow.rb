@@ -1,6 +1,6 @@
 cask "tab-flow" do
-  version "1.0.1"
-  sha256 "e9ee8ea8aa846340841114a7828b51a5c4aea1583cda7bab966261cb92c7a0cc"
+  version "1.3.0"
+  sha256 "670d13d9cc0bf03743058559dfb16124a5adf5177531def6001bfb77fdb9886d"
 
   url "https://github.com/mgabs/tab-flow/releases/download/v#{version}/TabFlow-#{version}.zip"
   name "TabFlow"
