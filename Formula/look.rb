@@ -4,16 +4,14 @@ class Look < Formula
   version "0.7.8"
   license "GPL-3.0-only"
 
+  url "https://github.com/mgabs/look/releases/download/v#{version}/Look-#{version}-macOS.zip"
+  sha256 "fbba7c99409aa2bf747b181d9e5fdc4a9b69f4951ded3d1ae7e14d0f14b0e017"
+
   depends_on :macos
 
-  on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/mgabs/look/releases/download/v#{version}/Look-#{version}-macOS.zip"
-      sha256 "fbba7c99409aa2bf747b181d9e5fdc4a9b69f4951ded3d1ae7e14d0f14b0e017"
-    else
-      url "https://github.com/mgabs/look/releases/download/v#{version}/Look-#{version}-macOS-x86_64.zip"
-      sha256 "23baf5b37686a6de931e2314041676ca71f8ffb5e4991cf01d61b2b45394ccff"
-    end
+  on_intel do
+    url "https://github.com/mgabs/look/releases/download/v#{version}/Look-#{version}-macOS-x86_64.zip"
+    sha256 "23baf5b37686a6de931e2314041676ca71f8ffb5e4991cf01d61b2b45394ccff"
   end
 
   def install
