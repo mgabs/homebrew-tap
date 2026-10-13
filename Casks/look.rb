@@ -1,12 +1,12 @@
 cask "look" do
-  version "0.8.6"
+  version "0.9.0"
 
   on_arm do
-    sha256 "f7094258f32aea5817455dc3166e8959c17be6dfdee537d2f31dd9893d1d160d"
+    sha256 "8dded9a2f3a0abe724c52c9049715b9a1a2856f415da70f921684e29e2c3712b"
     url "https://github.com/mgabs/look/releases/download/v#{version}/Look-#{version}-macOS.zip"
   end
   on_intel do
-    sha256 "375bfaac8b1c639b344844e57ec70bbe01442e6244d46d1f75b3e70a4c876713"
+    sha256 "217539c7e8cde9d55e415e54d3a94a83aae5cacf85ad2592cf45399b8bd03d84"
     url "https://github.com/mgabs/look/releases/download/v#{version}/Look-#{version}-macOS-x86_64.zip"
   end
 
