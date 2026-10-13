@@ -1,31 +1,42 @@
 class Lgtm < Formula
-  desc "Fast, real-time terminal diff reviewer & AI agent steering TUI built in Rust"
-  homepage "https://github.com/mgabs/lgtm"
-  version "0.8.2"
-  license "MIT"
+  desc "Keyboard-first local launcher"
+  homepage "https://github.com/mgabs/look"
+  version "0.8.6"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/mgabs/lgtm/releases/download/v0.8.2/lgtm-v0.8.2-darwin-arm64.tar.gz"
-      sha256 "62b9a68409ded09ae3226c7fda0a1f7c83e8c882bae7989cb71201a406fab93a"
-    else
-      url "https://github.com/mgabs/lgtm/releases/download/v0.8.2/lgtm-v0.8.2-darwin-arm64.tar.gz"
-      sha256 "62b9a68409ded09ae3226c7fda0a1f7c83e8c882bae7989cb71201a406fab93a"
-    end
-  end
+      url "https://github.com/mgabs/look/releases/download/v#{version}/Look-#{version}-macOS.zip"
+      sha256 "f7094258f32aea5817455dc3166e8959c17be6dfdee537d2f31dd9893d1d160d"
 
-  on_linux do
+      def install
+        prefix.install "Look.app"
+        bin.write_exec_script "#{prefix}/Look.app/Contents/MacOS/Look"
+        mv "#{bin}/Look", "#{bin}/lgtm"
+        ln_sf "#{bin}/lgtm", "#{bin}/lookapp"
+      end
+    end
+
     if Hardware::CPU.intel?
-      url "https://github.com/mgabs/lgtm/releases/download/v0.8.2/lgtm-v0.8.2-linux-x86_64.tar.gz"
-      sha256 "c4c22bdb51a779298231361aa9d39b77d0b0b8314359ca65352a0f5a8329b43b"
+      url "https://github.com/mgabs/look/releases/download/v#{version}/Look-#{version}-macOS-x86_64.zip"
+      sha256 "375bfaac8b1c639b344844e57ec70bbe01442e6244d46d1f75b3e70a4c876713"
+
+      def install
+        prefix.install "Look.app"
+        bin.write_exec_script "#{prefix}/Look.app/Contents/MacOS/Look"
+        mv "#{bin}/Look", "#{bin}/lgtm"
+        ln_sf "#{bin}/lgtm", "#{bin}/lookapp"
+      end
     end
   end
 
-  def install
-    bin.install "lgtm"
+  def caveats
+    <<~EOS
+      Look.app has been installed to #{opt_prefix}/Look.app.
+      CLI binary available as 'lgtm' and 'lookapp'.
+    EOS
   end
 
   test do
-    assert_match "Real-Time Terminal Diff Reviewer", shell_output("#{bin}/lgtm --help")
+    assert_predicate prefix/"Look.app", :exist?
   end
 end
