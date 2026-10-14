@@ -1,12 +1,12 @@
 class Lgtm < Formula
   desc "Keyboard-first local launcher"
   homepage "https://github.com/mgabs/look"
-  version "0.9.0"
+  version "0.9.1"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/mgabs/look/releases/download/v#{version}/Look-#{version}-macOS.zip"
-      sha256 "8dded9a2f3a0abe724c52c9049715b9a1a2856f415da70f921684e29e2c3712b"
+      sha256 "8e4e0a3cc88ff5c5d44b6cd31e6628b902aa0d61f98d0663952fa77aaf4f2ef8"
 
       def install
         prefix.install "Look.app"
@@ -18,7 +18,7 @@ class Lgtm < Formula
 
     if Hardware::CPU.intel?
       url "https://github.com/mgabs/look/releases/download/v#{version}/Look-#{version}-macOS-x86_64.zip"
-      sha256 "217539c7e8cde9d55e415e54d3a94a83aae5cacf85ad2592cf45399b8bd03d84"
+      sha256 "b18251d02bcf840172dc260d8185523c4bf6061d26c5b7c44badb0d4cb5bf2f7"
 
       def install
         prefix.install "Look.app"
