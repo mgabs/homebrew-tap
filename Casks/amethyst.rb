@@ -1,6 +1,6 @@
 cask "amethyst" do
-  version "0.27.1,1572"
-  sha256 "81692bff6dbd51437cc58bd48c7c0eb6f70a94b2ad330996b3b66d2ffd6990fd"
+  version "Amethyst-v0.28.0-b1575.dSYM.zip,Amethyst-v0.28.0-b1575.dSYM.zip"
+  sha256 "29e7a27f8f751a6d7fcf19d22fd86bb053928a8d725f12fc51f895a1920213f2"
 
   url "https://github.com/mgabs/Amethyst/releases/download/v#{version.csv.first}/Amethyst-v#{version.csv.first}-b#{version.csv.second}.zip"
   name "Amethyst"
@@ -13,7 +13,7 @@ cask "amethyst" do
   end
 
   auto_updates true
-  depends_on macos: :monterey
+  depends_on macos: ">= :monterey"
 
   app "Amethyst.app"
 
