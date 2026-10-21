@@ -17,6 +17,12 @@ cask "amethyst" do
 
   app "Amethyst.app"
 
+  postflight do
+    system_command "xattr",
+                   args:         ["-dr", "com.apple.quarantine", "#{appdir}/Amethyst.app"],
+                   must_succeed: false
+  end
+
   zap trash: [
     "~/Library/Application Support/Amethyst",
     "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.amethyst.amethyst.sfl*",

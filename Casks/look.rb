@@ -24,6 +24,12 @@ cask "look" do
   app "Look.app"
   binary "#{appdir}/Look.app/Contents/MacOS/Look", target: "lookapp"
 
+  postflight do
+    system_command "xattr",
+                   args:         ["-dr", "com.apple.quarantine", "#{appdir}/Look.app"],
+                   must_succeed: false
+  end
+
   uninstall quit: "noah-code.Look"
 
   zap trash: [
