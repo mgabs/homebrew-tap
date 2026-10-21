@@ -1,6 +1,6 @@
 cask "amethyst" do
-  version "Amethyst-v0.28.0-b1575.dSYM.zip,Amethyst-v0.28.0-b1575.dSYM.zip"
-  sha256 "29e7a27f8f751a6d7fcf19d22fd86bb053928a8d725f12fc51f895a1920213f2"
+  version "0.28.0,1575"
+  sha256 "f9b4220e08251a97199c2e1307a861fb5d79420b6f63402601bb3d2b2e5365b7"
 
   url "https://github.com/mgabs/Amethyst/releases/download/v#{version.csv.first}/Amethyst-v#{version.csv.first}-b#{version.csv.second}.zip"
   name "Amethyst"
@@ -8,7 +8,7 @@ cask "amethyst" do
   homepage "https://github.com/mgabs/Amethyst"
 
   livecheck do
-    url "https://raw.githubusercontent.com/mgabs/Amethyst/master/build/appcast.xml"
+    url "https://github.com/mgabs/Amethyst/releases/latest/download/appcast.xml"
     strategy :sparkle
   end
 
