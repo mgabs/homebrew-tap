@@ -17,10 +17,10 @@ cask "amethyst" do
 
   app "Amethyst.app"
 
-  postflight do
-    system_command "xattr",
-                   args:         ["-dr", "com.apple.quarantine", "#{appdir}/Amethyst.app"],
-                   must_succeed: false
+  postflight_steps do
+    run "xattr",
+        args:         ["-dr", "com.apple.quarantine", "{{appdir}}/Amethyst.app"],
+        must_succeed: false
   end
 
   zap trash: [

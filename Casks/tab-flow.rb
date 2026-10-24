@@ -17,10 +17,10 @@ cask "tab-flow" do
 
   app "TabFlow.app"
 
-  postflight do
-    system_command "xattr",
-                   args:         ["-dr", "com.apple.quarantine", "#{appdir}/TabFlow.app"],
-                   must_succeed: false
+  postflight_steps do
+    run "xattr",
+        args:         ["-dr", "com.apple.quarantine", "{{appdir}}/TabFlow.app"],
+        must_succeed: false
   end
 
   uninstall quit: "com.mgabs.tabflow-macos"
