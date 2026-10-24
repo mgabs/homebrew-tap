@@ -30,7 +30,8 @@ class TapTest < Minitest::Test
       assert_match(/class\s+\w+\s*<\s*Formula/, content, "#{rel_path} must define a class inheriting from Formula")
       assert_match(/^\s*desc\s+"[^"]+"/, content, "#{rel_path} must have a desc")
       assert_match(/^\s*homepage\s+"#{URL_REGEX.source[2..-3]}"/, content, "#{rel_path} must have a valid HTTPS homepage")
-      assert_match(/^\s*version\s+"[^"]+"/, content, "#{rel_path} must specify version")
+      has_version = content.match?(/^\s*version\s+"[^"]+"/) || content.match?(/url\s+"[^"]+[\/-]v?(\d+\.\d+(\.\d+)?)/)
+      assert has_version, "#{rel_path} must specify version or have version in url"
       assert_match(/^\s*license\s+"[^"]+"/, content, "#{rel_path} must specify license")
       assert_match(/def install/, content, "#{rel_path} must have an install block")
       assert_match(/test do/, content, "#{rel_path} must have a test block")

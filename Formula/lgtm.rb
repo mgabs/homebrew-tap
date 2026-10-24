@@ -1,7 +1,6 @@
 class Lgtm < Formula
   desc "Fast, real-time terminal diff reviewer & AI agent steering TUI built in Rust"
   homepage "https://github.com/mgabs/lgtm"
-  version "1.0.1"
   license "MIT"
 
   on_macos do
