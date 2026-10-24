@@ -1,0 +1,9 @@
+repos:
+  - repo: local
+    hooks:
+      - id: brew-audit
+        name: brew audit
+        entry: brew audit --tap mgabs/homebrew-tap --strict
+        language: system
+        pass_filenames: false
+        always_run: true
