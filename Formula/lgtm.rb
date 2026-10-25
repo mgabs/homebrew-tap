@@ -7,17 +7,17 @@ class Lgtm < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/mgabs/lgtm/releases/download/v2.2.0/lgtm-v2.2.0-darwin-arm64.tar.gz"
-      sha256 "0c686eb44b01dfcde3914218446432c9390e214452fc002e7e415cebf4a58ed1"
+      sha256 "9587d3d08b09a411074ed8810970813526f5be1eef9dc3407c2b203982fbfb82"
     else
       url "https://github.com/mgabs/lgtm/releases/download/v2.2.0/lgtm-v2.2.0-darwin-arm64.tar.gz"
-      sha256 "0c686eb44b01dfcde3914218446432c9390e214452fc002e7e415cebf4a58ed1"
+      sha256 "9587d3d08b09a411074ed8810970813526f5be1eef9dc3407c2b203982fbfb82"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/mgabs/lgtm/releases/download/v2.2.0/lgtm-v2.2.0-linux-x86_64.tar.gz"
-      sha256 "0636e82bdd929072944034041535571730b9899410b7dd3e0995d7a565f8af1f"
+      sha256 "606783ecb43ad87cce561a9e3014990de5da4ff5dae05f67a169899c7f9259ca"
     end
   end
 
