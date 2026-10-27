@@ -1,23 +1,23 @@
 class Lgtm < Formula
   desc "Fast, real-time terminal diff reviewer & AI agent steering TUI built in Rust"
   homepage "https://github.com/mgabs/lgtm"
-  version "2.4.0"
+  version "2.5.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/mgabs/lgtm/releases/download/v2.4.0/lgtm-v2.4.0-darwin-arm64.tar.gz"
-      sha256 "be767c9df7b72dfdca15fba568ac54ebb0903095b43d5c5bb17cecd9c064b28e"
+      url "https://github.com/mgabs/lgtm/releases/download/v2.5.0/lgtm-v2.5.0-darwin-arm64.tar.gz"
+      sha256 "ac62cc2b11bda04b05099c2023261407cf9b30dd772cfdada00782be4ebdf2ec"
     else
-      url "https://github.com/mgabs/lgtm/releases/download/v2.4.0/lgtm-v2.4.0-darwin-arm64.tar.gz"
-      sha256 "be767c9df7b72dfdca15fba568ac54ebb0903095b43d5c5bb17cecd9c064b28e"
+      url "https://github.com/mgabs/lgtm/releases/download/v2.5.0/lgtm-v2.5.0-darwin-arm64.tar.gz"
+      sha256 "ac62cc2b11bda04b05099c2023261407cf9b30dd772cfdada00782be4ebdf2ec"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/mgabs/lgtm/releases/download/v2.4.0/lgtm-v2.4.0-linux-x86_64.tar.gz"
-      sha256 "cdf839572aefd0d869fbed90f2731569b23d8d5161d466da222635daacebe8fd"
+      url "https://github.com/mgabs/lgtm/releases/download/v2.5.0/lgtm-v2.5.0-linux-x86_64.tar.gz"
+      sha256 "c5118ebf9298b4f8be16728839e858d2b73756030657cad80d7e9cc8947297d2"
     end
   end
 
