@@ -12,6 +12,7 @@ Custom Homebrew tap for macOS applications and CLI developer tools.
 ## Casks (macOS Apps)
 
 - **Amethyst** (Fork): `brew install --cask mgabs/tap/amethyst`
+- **Hidden Bar** (Fork): `brew install --cask mgabs/tap/hidden-bar`
 - **Look**: `brew install --cask mgabs/tap/look`
 - **TabFlow**: `brew install --cask mgabs/tap/tab-flow`
 - **tscribe**: `brew install --cask mgabs/tap/tscribe`
