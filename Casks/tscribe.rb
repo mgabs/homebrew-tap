@@ -3,10 +3,12 @@ cask "tscribe" do
 
   on_arm do
     sha256 "b54f9683d9e6223191e1ece21dc0bc58309122d9b44ee8788f6d85887eca8b84"
+
     url "https://github.com/mgabs/tscribe/releases/download/v#{version}/tscribe-#{version}-macos-arm64.zip"
   end
   on_intel do
     sha256 "8f4e5309840b374b697e7b00257444bae75799f120f8be640041305a08adbe72"
+
     url "https://github.com/mgabs/tscribe/releases/download/v#{version}/tscribe-#{version}-macos-x86_64.zip"
   end
 

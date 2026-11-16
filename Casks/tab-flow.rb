@@ -4,7 +4,7 @@ cask "tab-flow" do
 
   url "https://github.com/mgabs/tab-flow/releases/download/v#{version}/TabFlow-#{version}.zip"
   name "TabFlow"
-  desc "Alt-Tab window switcher for macOS"
+  desc "Alt-Tab window switcher"
   homepage "https://tabflow.app/"
 
   livecheck do
