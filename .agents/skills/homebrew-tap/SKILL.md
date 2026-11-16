@@ -53,6 +53,12 @@ Key requirements:
 Always verify tap changes with strict audit before committing:
 
 ```bash
+# Run tap unit tests (works in sandbox)
+make test
+
+# Audit a specific formula/cask (file paths are disabled in modern Homebrew)
+rtk brew audit --cask --strict <user>/<repo>/<cask>
+
 # Audit full tap strictly
 rtk brew audit --tap <user>/<repo> --strict
 
@@ -60,5 +66,6 @@ rtk brew audit --tap <user>/<repo> --strict
 rtk brew style Formula/*.rb Casks/*.rb
 ```
 
-### Git Sandboxing Note
-Git index lock creation (`.git/index.lock`) may be blocked inside restricted sandboxes during commits. If git commands fail with `Operation not permitted`, execute the commit with explicit unsandboxed permission.
+### Sandboxing Notes
+- **Git (`add`/`commit`)**: `.git/index.lock` creation may fail with `Operation not permitted` in sandbox; re-run with `BypassSandbox: true`.
+- **`brew style` / `brew audit`**: Portable Ruby / Bundler reads `/etc/resolv.conf` and may fail with `Errno::EPERM`; re-run with `BypassSandbox: true`.
