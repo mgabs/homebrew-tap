@@ -1,4 +1,15 @@
-.PHONY: test audit style all
+.PHONY: help test audit style ci all
+.DEFAULT_GOAL := help
+
+help:
+	@echo "Available targets:"
+	@echo "  test   - Run tap unit tests"
+	@echo "  audit  - Audit formulae and casks"
+	@echo "  style  - Check formula and cask style"
+	@echo "  ci     - Run all local checks (test + style)"
+	@echo "  help   - Show this help message"
+
+ci: test style
 
 all: test
 
